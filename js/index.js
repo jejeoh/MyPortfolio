@@ -23,7 +23,7 @@ window.addEventListener('scroll', function(){
                 sld.classList.toggle('act');
                 setTimeout(function(){
                     bon = true;
-                }, 5000);
+                }, 2000);
             }
 
         }
@@ -38,10 +38,21 @@ window.addEventListener('scroll', function(){
                 sld.classList.toggle('act');
                 setTimeout(function(){
                     bon = true;
-                }, 5000);
+                }, 2000);
             }
         }
     }
+
+})
+
+
+var curseur = document.getElementById('cursor1');
+var centreYcurseur = parseInt(getComputedStyle(curseur, null).height) / 2;
+var centreXcurseur = parseInt(getComputedStyle(curseur, null).width) / 2;
+
+window.addEventListener('mousemove', e => {
+  curseur.style.left = e.pageX - centreXcurseur + "px"
+    curseur.style.top = e.pageY - centreYcurseur - 120 + "px"
 
 })
 

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
 
 *{
@@ -7,12 +6,18 @@
 body{
     height: 150vh;
     background: #000;
+    cursor: none;
+      padding:initial;
+    margin:initial;
+    position: relative;
+
 }
 section.all{
     width: 100%;
     height: 100vh;
     position: sticky;
     top: 0;
+    overflow: hidden;
 }
 section.slid{
     opacity: 0;
@@ -23,6 +28,7 @@ section.slid{
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: 0.2s;
 }
 section.slid.act{
     opacity: 1;
@@ -30,21 +36,146 @@ section.slid.act{
 h1.back{
     position: absolute;
     color: #000;
-    font-size: 60vh;
+    font-size: 50vh;
     font-family: 'PT Sans', sans-serif;
-    text-shadow: -10px 0 #5bbdff, 0 10px #5bbdff, 10px 0 #5bbdff, 0 -10px #5bbdff;
+    text-shadow: 2px 0 0 #5bbdff, -2px 0 0 #5bbdff, 0 2px 0 #5bbdff, 0 -2px 0 #5bbdff, 1px 1px #5bbdff, -1px -1px 0 #5bbdff, 1px -1px 0 #5bbdff, -1px 1px 0 #5bbdff;
     transform: rotate(90deg)  translateY(25px);
-    transition: 0.7s;
+    transition: 0.2s;
 }
 section.slid.act h1.back{
+    transition: 1.5s;
     transform:rotate(90deg)  translateY(0);
+}
+section.slid:nth-child(2) h1.title{
+    font-size: 7vh;
+    height: 9vh;
+}
+section.slid:nth-child(3) h1.title{
+    font-size: 8vh;
+    height: 10vh;
+}
+section.slid:nth-child(4) h1.title{
+    font-size: 7vh;
+    height: 9vh;
 }
 h1.title{
     position: absolute;
     color: #fff;
-    font-size: 10vh;
-    font-family: 'Roboto', sans-serif;
+    font-size: 15vh;
+    font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+    transform: translateY(90px);
+    transition: 0.2s;
+    text-align: center;
+    height: 20vh;
+    width: 100%;
+    overflow: hidden;
 }
-::-webkit-scrollbar {
-    width: 15px;
+section.slid.act h1.title{
+    transition: 1.5s;
+    transform: translateY(0px);
+
 }
+div.menu{
+    width: 100%;
+    height: 6vh;
+    background-color: #000;
+    border-bottom: 4px solid #fff;
+    top: 0;
+    position: absolute;
+    z-index: 99999;
+    text-align: center;
+    cursor: pointer;
+}
+div.br{
+    width: 10%;
+    margin-left: 45%;
+    height: 0.7vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background: #fff;
+}
+.cursor{
+    position: absolute;
+    width:2%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: #fff;
+    z-index: 999999;
+    text-align: center;
+    display: none;
+  }
+  .cursor::before{
+    content: "";
+    transition: 0.2s;
+    width: 0%;
+    background-color: #838383;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: 50%;
+    display: block;
+  }
+  div.menu:hover .cursor::before{
+    width:100%;
+    margin: 0;
+  }
+  section.slid:nth-child(5){
+        display: block;
+   }
+   div.ht{
+    margin-top: 15vh;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+   }
+  h3.msg{
+    font-size: 3vh;
+    color: #fff;
+    transition: 0.2s;
+    opacity: 0;
+  }
+  section.slid.act h3.msg{
+    transition: 1s;
+    opacity: 1;
+  }
+  div.icon{
+    color: #fff;
+    font-size: 8vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+    height: 10vh;
+    opacity: 0;
+    transition: 0.2s;
+  }
+  section.slid.act div.icon{
+    opacity: 1;
+    transition: 1s;
+  }
+  div.icon a{
+    color: #fff;
+  }
+div.scroll{
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    text-align: center;
+    z-index: 20;
+    top: 93vh;
+}
+div.scroll h4.mess{
+    color: #fff;
+    font-size: 3vh;
+    font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+}
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 1px;
+}
+
+
+
